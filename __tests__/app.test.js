@@ -14,6 +14,8 @@ describe('app routes', () => {
 
       expect(true).toEqual(true);
     });
+  });
+});
 
 describe('app routes', () => {
   describe('routes', () => {
