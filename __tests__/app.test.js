@@ -1,18 +1,49 @@
 require('dotenv').config();
 
-// const { execSync } = require('child_process');
+const { execSync } = require('child_process');
 
-// const fakeRequest = require('supertest');
-// const app = require('../lib/app');
+const fakeRequest = require('supertest');
+const app = require('../lib/app');
 // const client = require('../lib/client');
 
 describe('app routes', () => {
   describe('routes', () => {
 
 
-    test('fakes a test ', async () => {
 
-      expect(true).toEqual(true);
+    test('gets all books ', async () => {
+
+      const expectation = [
+        {
+          id: expect.any(Number),
+          title: expect.any(String),
+          author: expect.any(String),
+          isbn: expect.any(Number),
+          owner_id: expect.any(Number)
+        },
+        {
+          id: expect.any(Number),
+          title: expect.any(String),
+          author: expect.any(String),
+          isbn: expect.any(Number),
+          owner_id: expect.any(Number)
+        },
+        {
+          id: expect.any(Number),
+          title: expect.any(String),
+          author: expect.any(String),
+          isbn: expect.any(Number),
+          owner_id: expect.any(Number)
+        },
+      ];
+      const data = await fakeRequest(app)
+        .get('/api/favorites')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+
+
     });
   });
 });
@@ -20,10 +51,10 @@ describe('app routes', () => {
 // describe('app routes', () => {
 //   describe('routes', () => {
 //     let token;
-  
+
 //     beforeAll(async () => {
 //       execSync('npm run setup-db');
-  
+
 //       await client.connect();
 //       const signInData = await fakeRequest(app)
 //         .post('/auth/signup')
@@ -31,10 +62,10 @@ describe('app routes', () => {
 //           email: 'jon@user.com',
 //           password: '1234'
 //         });
-      
+
 //       token = signInData.body.token; // eslint-disable-line
 //     }, 10000);
-  
+
 //     afterAll(done => {
 //       return client.end(done);
 //     });
