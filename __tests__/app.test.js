@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { execSync } = require('child_process');
+// const { execSync } = require('child_process');
 
 // const fakeRequest = require('supertest');
 // const app = require('../lib/app');
@@ -39,35 +39,33 @@ describe('app routes', () => {
 //       return client.end(done);
 //     });
 
-    // test('returns animals', async() => {
+// test('returns animals', async() => {
 
-    //   const expectation = [
-    //     {
-    //       'id': 1,
-    //       'name': 'bessie',
-    //       'cool_factor': 3,
-    //       'owner_id': 1
-    //     },
-    //     {
-    //       'id': 2,
-    //       'name': 'jumpy',
-    //       'cool_factor': 4,
-    //       'owner_id': 1
-    //     },
-    //     {
-    //       'id': 3,
-    //       'name': 'spot',
-    //       'cool_factor': 10,
-    //       'owner_id': 1
-    //     }
-    //   ];
+//   const expectation = [
+//     {
+//       'id': 1,
+//       'name': 'bessie',
+//       'cool_factor': 3,
+//       'owner_id': 1
+//     },
+//     {
+//       'id': 2,
+//       'name': 'jumpy',
+//       'cool_factor': 4,
+//       'owner_id': 1
+//     },
+//     {
+//       'id': 3,
+//       'name': 'spot',
+//       'cool_factor': 10,
+//       'owner_id': 1
+//     }
+//   ];
 
-    //   const data = await fakeRequest(app)
-    //     .get('/animals')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+//   const data = await fakeRequest(app)
+//     .get('/animals')
+//     .expect('Content-Type', /json/)
+//     .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
-  });
-});
+//   expect(data.body).toEqual(expectation);
+// });
